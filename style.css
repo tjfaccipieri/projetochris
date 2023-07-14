@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+  --primary: #041b66;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-image: url('./assets/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 2rem;
+  padding-block: 0.5rem;
+  background-color: var(--primary);
+  color: var(--white);
+
+  > ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+
+    > a {
+      color: var(--white);
+      text-decoration: none;
+    }
+  }
+}
+
+main {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  > h2 {
+    color: var(--white);
+    font-size: 60px;
+    text-align: center;
+    line-height: 65px;
+    font-weight: 500;
+  }
+}
+
+.curriculoContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-block: 1rem;
+  
+  > article {
+    background-color: var(--white);
+    text-align: center;
+    border: 1px solid var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    > img {
+      max-width: 100%;
+      min-width: 250px;
+      aspect-ratio: 1;
+      object-fit: cover;
+    }
+  }
+}
+
+@media (max-width: 1140px) {
+  .curriculoContainer{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .curriculoContainer{
+    grid-template-columns: 1fr;
+  }
+}
+
+.logo {
+  width: 30px;
+}
+
+.logo:hover {
+  opacity: .8;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding-bottom: 1rem;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+    > h2 {
+      font-weight: 500;
+      font-size: 20px;
+    }
+  
+    > p {
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 300;
+      padding-inline: 8px;
+    }
+  }
+}
